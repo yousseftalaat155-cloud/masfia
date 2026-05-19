@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مسافة السكة - حاسبة التوصيل</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #111827, #1f2937);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .card {
+        background: white;
+        width: 100%;
+        max-width: 520px;
+        padding: 25px;
+        border-radius: 30px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+      }
+
+      .logo {
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      .logo img {
+        width: 140px;
+        margin-bottom: 10px;
+      }
+
+      .logo h1 {
+        margin: 0;
+        font-size: 36px;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 15px;
+        margin-top: 12px;
+        border-radius: 15px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+
+      .option {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        margin-top: 12px;
+      }
+
+      .total {
+        background: black;
+        color: white;
+        padding: 22px;
+        border-radius: 25px;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .total h2 {
+        font-size: 44px;
+        margin: 0;
+      }
+
+      button {
+        width: 100%;
+        background: #22c55e;
+        color: white;
+        border: none;
+        padding: 18px;
+        border-radius: 20px;
+        font-size: 21px;
+        font-weight: bold;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+
+      .note {
+        text-align: center;
+        font-size: 14px;
+        color: #777;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <div class="logo">
+        <img src="logo.jpg" />
+
+        <h1>مسافة السكة</h1>
+      </div>
+
+      <div class="subtitle">حاسبة احترافية لسعر التوصيل 🚚</div>
+
+      <input type="text" id="name" placeholder="اسم العميل" />
+
+      <input type="text" id="orderType" placeholder="نوع الأوردر" />
+      <select id="pickup">
+        <option value="">اختر مكان الاستلام</option>
+      </select>
+
+      <select id="delivery">
+        <option value="">اختر مكان التسليم</option>
+      </select>
+
+      <input type="text" id="distance" placeholder="المسافة بالكيلو" readonly />
+      <div class="option">
+        <span>انتظار</span>
+        <input type="checkbox" id="waiting" />
+      </div>
+
+      <div class="option">
+        <span>أوردر سريع</span>
+        <input type="checkbox" id="fast" />
+      </div>
+
+      <div class="total">
+        <p>السعر النهائي</p>
+        <h2 id="price">40 جنيه</h2>
+      </div>
+
+      <button onclick="sendWhatsapp()">إرسال الطلب على واتساب</button>
+
+      <div class="note">للتواصل: 01017678009</div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
